@@ -60,6 +60,7 @@ This API demonstrates how to manage users in a real-world scenario. It allows yo
 | `/users` | GET | List all users |
 | `/users/{id}` | GET | Get single user info |
 | `/users/{id}` | PATCH | Update user info (name, email, activate/deactivate) |
+| Others will be added as at when due |
 
 ### User Summary
 | Endpoint | HTTP Method | Description |
