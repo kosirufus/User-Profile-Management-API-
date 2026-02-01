@@ -1,11 +1,11 @@
 ﻿using Microsoft.AspNetCore.Identity;  //alows me to use or inherit from "IdentityUser"
-using System.ComponentModel.DataAnnotations;  //referenced in order to use [Required] attribute at line 8
+using System.ComponentModel.DataAnnotations;  //referenced in order to use [Required] attribute at line 9
 
 namespace User_Profile_Management_API.Models
 {
     public class User : IdentityUser
     {
-
+        // custom properties for the User class
         [Required]
         public string Name { get; set;  } = string.Empty;   //string.Empty is used to initialize Name property with an empty string instead of null
 

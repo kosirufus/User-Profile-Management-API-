@@ -9,14 +9,15 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
+builder.Services.AddOpenApi();  
 
 // If am using a real database:
-//builder.Services.AddDbContext<UserProfileManagementApiContext>(options => options.UseSqlServer
-//(builder.Configuration.GetConnectionString("Defaultconnection")));
+builder.Services.AddDbContext<UserProfileManagementApiContext>(options => options.UseMySql
+(builder.Configuration.GetConnectionString("Defaultconnection"),
+ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("Defaultconnection"))));
 
 // using InMemory database:
-builder.Services.AddDbContext <UserProfileManagementApiContext>(options => options.UseInMemoryDatabase("UserProfileDb"));
+// builder.Services.AddDbContext <UserProfileManagementApiContext>(options => options.UseInMemoryDatabase("UserProfileDb"));
 
 // configuration for EF Core Identity
 builder.Services.AddIdentity<User, IdentityRole>(options =>
